@@ -5,7 +5,7 @@
 
 When you want to install an R package on GitHub, but you can’t access
 GitHub, this function helps you download and install the package from
-another website <https://hub.fastgit.org/>, which is in real-time sync
+another website <https://hub.fastgit.xyz/>, which is in real-time sync
 with GitHub.
 
 ## Installation

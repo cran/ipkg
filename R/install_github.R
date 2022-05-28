@@ -18,7 +18,7 @@
 
 # Install GitHub packages from another repo
 install_github = function(pkg) {
-  url = paste0("https://hub.fastgit.org/", pkg, ".git")
+  url = paste0("https://hub.fastgit.xyz/", pkg, ".git")
   remotes::install_git(url) 
 }
 
