@@ -2,21 +2,48 @@
 % Please edit documentation in R/install_github.R
 \name{install_github}
 \alias{install_github}
-\title{Install R packages on GitHub from hub.fastgit.org}
+\title{Install R packages from GitHub via the proxy site https://ghproxy.com}
 \usage{
-install_github(pkg)
+install_github(
+  repo,
+  subdir = NULL,
+  ref = NULL,
+  upgrade = c("default", "ask", "always", "never"),
+  force = FALSE,
+  quiet = FALSE,
+  build = TRUE
+)
 }
 \arguments{
-\item{pkg}{Repository address in the format username/repo.}
+\item{repo}{Repository address in the format username/repo.}
+
+\item{subdir}{A sub-directory within a git repository that may 
+contain the package we are interested in installing.}
+
+\item{ref}{Name of branch, tag or SHA reference to use, if not HEAD.}
+
+\item{upgrade}{Should package dependencies be upgraded? One of "default", 
+"ask", "always", or "never". "default" respects the value of the 
+R_REMOTES_UPGRADE environment variable if set, and falls back to "ask" 
+if unset. "ask" prompts the user for which out of date packages to upgrade. 
+For non-interactive sessions "ask" is equivalent to "always". TRUE and FALSE 
+are also accepted and correspond to "always" and "never" respectively.}
+
+\item{force}{Force installation, even if the remote state has not changed 
+since the previous install.}
+
+\item{quiet}{If TRUE, suppress output.}
+
+\item{build}{If TRUE build the package before installing.}
 }
 \description{
-When you want to install an R package on GitHub, but you can't access GitHub,
-this function helps you download and install the package from another website,
-which is in real-time sync with GitHub.
+When you want to install R packages from GitHub, but you can't access GitHub,
+this function helps you download and install R packages from GitHub via the
+proxy website <https://ghproxy.com/>, which is in real-time sync with GitHub.
 }
 \examples{
 
-# Example
+# Example(Not run)
 # install_github("yihui/xfun")
 
 }
