@@ -1,8 +1,8 @@
-#' @title Download file from GitHub via the proxy site https://ghproxy.com
+#' @title Download file from GitHub via the proxy site
 #'
 #' @description
 #' This function can be used to download a file from GitHub via the 
-#' proxy site https://ghproxy.com.
+#' proxy website <https://ghproxy.com/> or <https://gh-proxy.com/>.
 #'
 #' @param url a character string (or longer vector for the "libcurl" method) 
 #' naming the URL of a resource to be downloaded. 
@@ -33,7 +33,6 @@
 #' the first header.
 #'
 #' @examples
-#'
 #' # Example(Not run)
 #' # download_file(
 #' #  url = "https://github.com/hadley/mastering-shiny/raw/main/neiss/products.tsv",
@@ -45,7 +44,7 @@
 
 #------------------------------------------------------------------------------#
 
-# Download file from GitHub via the proxy site https://ghproxy.com
+# Download file from GitHub via the proxy site
 download_file = function(
     url, 
     destfile, 
@@ -56,7 +55,18 @@ download_file = function(
     extra = getOption("download.file.extra"),
     headers = NULL
 ) {
-  proxy_url = paste0("https://ghproxy.com/", url)
+  # Alternate proxy address
+  proxy = c(
+    "https://ghproxy.com/",
+    "https://gh-proxy.com/"
+  )
+  # Determine a proxy address
+  if (conn_test(proxy[1]) == "ok") {
+    proxy_url = paste0(proxy[1], url)
+  } else {
+    proxy_url = paste0(proxy[2], url)
+  }
+  # Download file
   utils::download.file(
     url = proxy_url,
     destfile = destfile,

@@ -1,8 +1,10 @@
-0d68231683bacff07f4026ca292346eb *DESCRIPTION
+be401a8963a235fbb3abe2f38a7710d4 *DESCRIPTION
 4da79b61a2cf48d6ffbb4c10cd7ee09a *LICENSE
-d4a107206e8441b527be2627f58dfa07 *NAMESPACE
-837ca8b311ccbf9d3ba6d9d97e781031 *R/download_file.R
-2f20055c26edcc3ed97d8b3cffced741 *R/install_github.R
-efbea3c3e02a78666f3808bd4daca311 *README.md
-06659594ce23d79110421ea5ba1030c6 *man/download_file.Rd
-ccc1373c422af99bee0e69a198fd6ce3 *man/install_github.Rd
+bc43e91a31ddc7c6d5227e0de6ea40c5 *NAMESPACE
+8cab2dd103fea0cc6461cfc9487b0e59 *R/conn_test.R
+efb36b25b1910e7b1217f4def13e3d9a *R/download_file.R
+4e8622bf0dcc5daacba42dd7c7d11c9d *R/install_github.R
+a96a3542d9701271db0fbfb17a32bb61 *README.md
+0cda805c8eaf4c9c6389bbcbbdf7146a *man/conn_test.Rd
+5629dbd876a61ba3c45c6089472ae04f *man/download_file.Rd
+45e6d53af268cdf39feb7eacce41f521 *man/install_github.Rd

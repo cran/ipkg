@@ -2,7 +2,7 @@
 % Please edit documentation in R/download_file.R
 \name{download_file}
 \alias{download_file}
-\title{Download file from GitHub via the proxy site https://ghproxy.com}
+\title{Download file from GitHub via the proxy site}
 \usage{
 download_file(
   url,
@@ -46,10 +46,9 @@ the first header.}
 }
 \description{
 This function can be used to download a file from GitHub via the 
-proxy site https://ghproxy.com.
+proxy website <https://ghproxy.com/> or <https://gh-proxy.com/>.
 }
 \examples{
-
 # Example(Not run)
 # download_file(
 #  url = "https://github.com/hadley/mastering-shiny/raw/main/neiss/products.tsv",

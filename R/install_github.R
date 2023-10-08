@@ -1,9 +1,10 @@
-#' @title Install R packages from GitHub via the proxy site https://ghproxy.com
+#' @title Install R packages from GitHub via the proxy site
 #'
 #' @description
 #' When you want to install R packages from GitHub, but you can't access GitHub,
 #' this function helps you download and install R packages from GitHub via the
-#' proxy website <https://ghproxy.com/>, which is in real-time sync with GitHub.
+#' proxy website <https://ghproxy.com/> or <https://gh-proxy.com/>, which is in
+#' real-time sync with GitHub.
 #'
 #' @param repo Repository address in the format username/repo. 
 #' 
@@ -27,7 +28,6 @@
 #' @param build If TRUE build the package before installing.
 #'
 #' @examples
-#'
 #' # Example(Not run)
 #' # install_github("yihui/xfun")
 #'
@@ -35,7 +35,7 @@
 
 #------------------------------------------------------------------------------#
 
-# Install GitHub packages via the proxy site https://ghproxy.com
+# Install GitHub packages via the proxy site
 install_github = function(
     repo,
     subdir = NULL,
@@ -45,7 +45,18 @@ install_github = function(
     quiet = FALSE,
     build = TRUE
 ) {
-  proxy_url = paste0("https://ghproxy.com/https://github.com/", repo, ".git")
+  # Alternate proxy address
+  proxy = c(
+    "https://ghproxy.com/",
+    "https://gh-proxy.com/"
+  )
+  # Determine a proxy address
+  if (conn_test(proxy[1]) == "ok") {
+    proxy_url = paste0(proxy[1], "https://github.com/", repo, ".git")
+  } else {
+    proxy_url = paste0(proxy[2], "https://github.com/", repo, ".git")
+  }
+  # Install GitHub package
   remotes::install_git(
     url = proxy_url,
     subdir = subdir,

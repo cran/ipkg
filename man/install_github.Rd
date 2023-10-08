@@ -2,7 +2,7 @@
 % Please edit documentation in R/install_github.R
 \name{install_github}
 \alias{install_github}
-\title{Install R packages from GitHub via the proxy site https://ghproxy.com}
+\title{Install R packages from GitHub via the proxy site}
 \usage{
 install_github(
   repo,
@@ -39,10 +39,10 @@ since the previous install.}
 \description{
 When you want to install R packages from GitHub, but you can't access GitHub,
 this function helps you download and install R packages from GitHub via the
-proxy website <https://ghproxy.com/>, which is in real-time sync with GitHub.
+proxy website <https://ghproxy.com/> or <https://gh-proxy.com/>, which is in
+real-time sync with GitHub.
 }
 \examples{
-
 # Example(Not run)
 # install_github("yihui/xfun")
 
