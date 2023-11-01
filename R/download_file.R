@@ -55,28 +55,42 @@ download_file = function(
     extra = getOption("download.file.extra"),
     headers = NULL
 ) {
-  # Alternate proxy address
-  proxy = c(
-    "https://ghproxy.com/",
-    "https://gh-proxy.com/"
-  )
-  # Determine a proxy address
-  if (conn_test(proxy[1]) == "ok") {
-    proxy_url = paste0(proxy[1], url)
+  if (grepl("github", url) == TRUE) {
+    # Alternate proxy address
+    proxy = c(
+      "https://ghproxy.com/",
+      "https://gh-proxy.com/"
+    )
+    # Determine a proxy address
+    if (conn_test(proxy[1]) == "ok") {
+      proxy_url = paste0(proxy[1], url)
+    } else {
+      proxy_url = paste0(proxy[2], url)
+    }
+    # Download file
+    utils::download.file(
+      url = proxy_url,
+      destfile = destfile,
+      method = method,
+      quiet = quiet,
+      mode = mode,
+      cacheOK = cacheOK,
+      extra = extra,
+      headers = headers
+    )
   } else {
-    proxy_url = paste0(proxy[2], url)
+    # Download file
+    utils::download.file(
+      url = url,
+      destfile = destfile,
+      method = method,
+      quiet = quiet,
+      mode = mode,
+      cacheOK = cacheOK,
+      extra = extra,
+      headers = headers
+    )
   }
-  # Download file
-  utils::download.file(
-    url = proxy_url,
-    destfile = destfile,
-    method = method,
-    quiet = quiet,
-    mode = mode,
-    cacheOK = cacheOK,
-    extra = extra,
-    headers = headers
-  )
 }
 
 #------------------------------------------------------------------------------#

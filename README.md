@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Introduce
+# Introduction
 
 When you want to install an R package on GitHub, but you can’t access GitHub, 
 this function helps you download and install the package on GitHub via the 
