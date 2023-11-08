@@ -46,7 +46,7 @@ the first header.}
 }
 \description{
 This function can be used to download a file from GitHub via the 
-proxy website <https://ghproxy.com/> or <https://gh-proxy.com/>.
+proxy website <https://mirror.ghproxy.com/> or <https://gh-proxy.com/>.
 }
 \examples{
 # Example(Not run)

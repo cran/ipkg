@@ -2,7 +2,7 @@
 #'
 #' @description
 #' This function can be used to download a file from GitHub via the 
-#' proxy website <https://ghproxy.com/> or <https://gh-proxy.com/>.
+#' proxy website <https://mirror.ghproxy.com/> or <https://gh-proxy.com/>.
 #'
 #' @param url a character string (or longer vector for the "libcurl" method) 
 #' naming the URL of a resource to be downloaded. 
@@ -58,7 +58,7 @@ download_file = function(
   if (grepl("github", url) == TRUE) {
     # Alternate proxy address
     proxy = c(
-      "https://ghproxy.com/",
+      "https://mirror.ghproxy.com/",
       "https://gh-proxy.com/"
     )
     # Determine a proxy address

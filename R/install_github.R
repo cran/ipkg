@@ -3,7 +3,7 @@
 #' @description
 #' When you want to install R packages from GitHub, but you can't access GitHub,
 #' this function helps you download and install R packages from GitHub via the
-#' proxy website <https://ghproxy.com/> or <https://gh-proxy.com/>, which is in
+#' proxy website <https://mirror.ghproxy.com/> or <https://gh-proxy.com/>, which is in
 #' real-time sync with GitHub.
 #'
 #' @param repo Repository address in the format username/repo. 
@@ -47,7 +47,7 @@ install_github = function(
 ) {
   # Alternate proxy address
   proxy = c(
-    "https://ghproxy.com/",
+    "https://mirror.ghproxy.com/",
     "https://gh-proxy.com/"
   )
   # Determine a proxy address
