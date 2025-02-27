@@ -5,7 +5,7 @@
 
 When you want to install an R package on GitHub, but you can’t access GitHub, 
 this function helps you download and install the package on GitHub via the 
-proxy website <https://mirror.ghproxy.com/> or <https://gh-proxy.com/>, which 
+proxy website <https://gh-proxy.com/> or <https://ghfast.top/>, which 
 is in real-time sync with GitHub.
 
 ## Installation
